@@ -1,4 +1,5 @@
 class AuthorControlController < ApplicationController
+  before_action :authenticate_author!
   def show
     @comic = Comic.find(params[:id])
   end
