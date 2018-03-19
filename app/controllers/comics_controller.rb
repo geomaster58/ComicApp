@@ -1,26 +1,30 @@
-class AuthorControlController < ApplicationController
+class ComicsController < ApplicationController
   before_action :authenticate_author!
+  before_action :set_comic, only: [:show, :edit, :update, :destroy, :toggle_status]
+  def index
+    @comics = Comic.all
+  end
+
   def show
     @comic = Comic.find(params[:id])
   end
 
-  # GET /blogs/new
+  
   def new
     @comic = Comic.new
   end
 
-  # GET /blogs/1/edit
+  
   def edit
   end
 
-  # POST /blogs
-  # POST /blogs.json
+  
   def create
     @comic = Comic.new(comic_params)
     
     respond_to do |format|
       if @comic.save
-        format.html { redirect_to @comic, notice: 'Success!!' }
+        format.html { redirect_to comics_path, notice: 'Success!!' }
         
       else
         format.html { render :new }
@@ -29,12 +33,11 @@ class AuthorControlController < ApplicationController
     end
   end
 
-  # PATCH/PUT /blogs/1
-  # PATCH/PUT /blogs/1.json
+  
   def update
     respond_to do |format|
       if @comic.update(comic_params)
-        format.html { redirect_to @comic, notice: 'Updated!!' }
+        format.html { redirect_to comics_path, notice: 'Updated!!' }
         
       else
         format.html { render :edit }
@@ -43,19 +46,22 @@ class AuthorControlController < ApplicationController
     end
   end
 
-  # DELETE /blogs/1
-  # DELETE /blogs/1.json
+  
   def destroy
     @comic.destroy
     respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Removed!!' }
+      format.html { redirect_to comics_path, notice: 'Removed!!' }
       
     end
   end
 
-  private 
+  private
+
+  def set_comic
+      @comic = Comic.find(params[:id])
+  end 
 
   def comic_params
-    params.require(:comic).permit(:image)
+    params.require(:comic).permit(:image, :title)
   end
 end

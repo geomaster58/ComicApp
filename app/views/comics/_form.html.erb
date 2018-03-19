@@ -1,0 +1,6 @@
+<%= form_with(model: comic, local: true) do |form| %>
+
+<%= form.file_field :image %>
+<%= form.text_field :title %>
+<%= form.submit %>
+<% end %>

@@ -3,5 +3,8 @@
 - Create Views (done)
 - Create controllers (done)
 - Create admin creation(done)
-- Styleize views
-- Create archive system 
+- Fix ENV credentials (done)
+- Limit Users and views (in progress)
+- Styleize views (in progress)
+- Update data model (in progress)
+- Create archive system (in progress)

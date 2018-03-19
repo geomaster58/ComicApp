@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :authors
   resources :pages
-  resources :author_control
+  resources :comics
   root to: 'pages#index'
 
 end

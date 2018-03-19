@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
   def index
-    @comic = Comic.all 
+    @comics = Comic.all 
+  end
+
+  def show
+    @comic = Comic.find(params[:id])
   end
 end

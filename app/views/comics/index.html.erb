@@ -1,4 +1,6 @@
 <center><h1>All chapters</h1></center>
+
+
 <center>
   <div class="comics">
     <% @comics.each do |comic| %>
@@ -9,6 +11,7 @@
           </div>
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4"><%= link_to comic.title, page_path(comic) %></span>
+            <span class="card-title activator grey-text text-darken-4"><%= link_to "Delete", comic, method: :delete, data: { confirm: 'You positive you want to delete this?' } %></span>
           </div>
         </div> 
       <% end %>  
