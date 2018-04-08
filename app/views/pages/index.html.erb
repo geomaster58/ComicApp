@@ -1,16 +1,9 @@
-<center><h1>All chapters</h1></center>
+<center><h1>Title Of Your Comic</h1></center>
 <center>
   <div class="comics">
     <% @comics.each do |comic| %>
       <%= link_to page_path(comic) do %>
-        <div class="card small">
-          <div class="card-image waves-effect waves-block waves-light">
-            <%= image_tag comic.image, class: "image-width" %>
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"><%= link_to comic.title, page_path(comic) %></span>
-          </div>
-        </div> 
+          <%= image_tag comic.image, class: "image-width", style: "width: 70vw; margin-top: -5.5px;" %>
       <% end %>  
     <% end %>
   </div>

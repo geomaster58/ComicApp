@@ -8,3 +8,7 @@
 - Styleize views (in progress)
 - Update data model (in progress)
 - Create archive system (in progress)
+- Comment Section
+- Center scrolling comics (X) w/ selection dropdown
+- Create chapters and tie comics to chapters
+- Tie selection to chapter
